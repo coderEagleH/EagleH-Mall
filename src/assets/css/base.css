@@ -1,0 +1,51 @@
+@import "./normalize.css";
+
+/* :root -> 伪类，用于获取根元素html */
+/* 内部格式为定义样式变量，当下面用到该样式时可以通过var()使用 */
+:root {
+  --color-text: #666; /* 文字颜色 */
+  --color-high-text: #1296db; /* 文字高亮颜色 */
+  --color-tint: #12cfff; /* 用于设置导航等的背景颜色 */
+  --color-background: #eee; /* 背景颜色 */
+  --font-size: 14px; /* 字体大小 */
+  --line-height: 1.5; /* 行高 */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
+    sans-serif;
+  user-select: none; /* 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent; /* tap点击, highlight背景高亮, color颜色, 颜色用数值调整 */
+  background: var(--color-background);
+  color: var(--color-text);
+  width: 100vw; /* rem vw/vh */
+}
+
+.clear-fix::after {
+  clear: both;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
